@@ -6,6 +6,10 @@ export class UsersController {
   public getUsers() {
     return 'You have sent a GET request to users endpoint'
   }
-
+  
+  @Post()
+  public createUsers() {
+    return 'You have sent a Post request to users endpoint'
+  }
 
 }
