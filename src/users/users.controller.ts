@@ -3,8 +3,12 @@ import { Controller, Get, Post, Patch, Put, Delete, Query, Param } from '@nestjs
 @Controller('users')
 export class UsersController {
   @Get('/:id/:optional?')
-  public getUsers(@Param() params: any) {
+  public getUsers(
+    @Param() params: any, 
+    @Query() query: any
+  ) {
     console.log(params)
+    console.log(query)
     return 'You have sent a GET request to users endpoint'
   }
   
