@@ -7,8 +7,8 @@ export class UsersController {
     @Param('id') id: any, 
     @Query('limit') limit: any
   ) {
-    console.log(id)
-    console.log(limit)
+    console.log(typeof id)
+    console.log(typeof limit)
     return 'You have sent a GET request to users endpoint'
   }
   
