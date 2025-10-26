@@ -14,9 +14,11 @@ export class UsersController {
   
   @Post()
   public createUsers(
-    @Body() request: any
+    @Body() request: any,
+    @Headers() headers: any
   ) {
     console.log(request)
+    console.log(headers)
     return 'You have sent a POST request to users endpoint'
   }
 
