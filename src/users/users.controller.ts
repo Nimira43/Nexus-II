@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Id } from '@nestjs/common'
+import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip } from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
@@ -16,11 +16,11 @@ export class UsersController {
   public createUsers(
     @Body() request: any,
     @Headers() headers: any,
-    @Id() id: any
+    @Ip() ip: any
   ) {
     console.log(request)
     console.log(headers)
-    console.log(id)
+    console.log(ip)
     return 'You have sent a POST request to users endpoint'
   }
 
