@@ -5,7 +5,7 @@ export class UsersController {
 
   @Get('/:id?')
   public getUsers(
-    @Param('id') id: any, 
+    @Param('id', ParseIntPipe) id: any, 
     @Query('limit') limit: any
   ) {
     console.log(typeof id)
