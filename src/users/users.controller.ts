@@ -16,7 +16,7 @@ export class UsersController {
   
   @Post()
   public createUsers(
-    @Body() request: any,
+    @Body(new ValidationPipe()) request: any,
     @Headers() headers: any,
     @Ip() ip: any
   ) {
