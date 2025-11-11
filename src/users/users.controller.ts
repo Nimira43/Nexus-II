@@ -6,11 +6,11 @@ export class UsersController {
   @Get('/:id?')
   public getUsers(
     @Param('id', ParseIntPipe) id: number | undefined , 
-    @Query('limit', ParseIntPipe) limit: any,
+    @Query('limit', ParseIntPipe) limit: number,
     @Query('page', ParseIntPipe) page: any
   ) {
-    console.log(typeof id)
-    console.log(id)
+    console.log(typeof limit)
+    console.log(typeof page)
     return 'You have sent a GET request to users endpoint'
   }
   
