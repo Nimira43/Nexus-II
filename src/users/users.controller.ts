@@ -6,8 +6,8 @@ export class UsersController {
   @Get('/:id?')
   public getUsers(
     @Param('id', ParseIntPipe) id: number | undefined , 
-    @Query('limit', ParseIntPipe) limit: number,
-    @Query('page', ParseIntPipe) page: number
+    @Query('limit',  new DefaultValuePipe(10), ParseIntPipe) limit: number,
+    @Query('page', new DefaultValuePipe(10), ParseIntPipe) page: number
   ) {
     console.log(typeof limit)
     console.log(typeof page)
