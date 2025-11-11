@@ -1,4 +1,5 @@
 import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip, ParseIntPipe, DefaultValuePipe, ValidationPipe } from '@nestjs/common'
+import { CreateUserDto } from './dtos/create-user.dto'
 
 @Controller('users')
 export class UsersController {
@@ -16,7 +17,7 @@ export class UsersController {
   
   @Post()
   public createUsers(
-    @Body(new ValidationPipe()) request: any,
+    @Body(new ValidationPipe()) request: CreateUserDto,
     @Headers() headers: any,
     @Ip() ip: any
   ) {
