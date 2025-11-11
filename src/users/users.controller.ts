@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip, ParseIntPipe, DefaultValuePipe } from '@nestjs/common'
+import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip, ParseIntPipe, DefaultValuePipe, ValidationPipe } from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
