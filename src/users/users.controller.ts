@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip, ParseIntPipe } from '@nestjs/common'
+import { Controller, Get, Post, Patch, Put, Delete, Query, Param, Body, Req, Headers, Ip, ParseIntPipe, DefaultValuePipe } from '@nestjs/common'
 
 @Controller('users')
 export class UsersController {
@@ -7,7 +7,7 @@ export class UsersController {
   public getUsers(
     @Param('id', ParseIntPipe) id: number | undefined , 
     @Query('limit', ParseIntPipe) limit: number,
-    @Query('page', ParseIntPipe) page: any
+    @Query('page', ParseIntPipe) page: number
   ) {
     console.log(typeof limit)
     console.log(typeof page)
