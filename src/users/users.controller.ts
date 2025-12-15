@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Query, Param, Body, ParseIntPipe, DefaultValuePipe } from '@nestjs/common'
+import { Controller, Get, Post, Query, Param, Body, ParseIntPipe, DefaultValuePipe, Patch } from '@nestjs/common'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { GetUsersParamsDto } from './dtos/get-users-params.dto'
 
@@ -23,4 +23,6 @@ export class UsersController {
     return 'You have sent a POST request to users endpoint'
   }
 
+  @Patch()
+  public patchUser() {}
 }
