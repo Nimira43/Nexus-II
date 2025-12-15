@@ -24,5 +24,7 @@ export class UsersController {
   }
 
   @Patch()
-  public patchUser() {}
+  public patchUser(
+    @Body body 
+  ) {}
 }
