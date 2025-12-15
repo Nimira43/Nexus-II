@@ -7,12 +7,11 @@ export class UsersController {
 
   @Get('/:id?')
   public getUsers(
-    @Param() getUsersParamDto: GetUsersParamsDto, 
+    @Param() getUserParamDto: GetUsersParamsDto, 
     @Query('limit',  new DefaultValuePipe(10), ParseIntPipe) limit: number,
     @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number
   ) {
-    console.log(limit)
-    console.log(page)
+    console.log(getUserParamDto)
     return 'You have sent a GET request to users endpoint'
   }
   
