@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Query, Param, Body, ParseIntPipe, DefaultValuePipe, Patch } from '@nestjs/common'
 import { CreateUserDto } from './dtos/create-user.dto'
 import { GetUsersParamsDto } from './dtos/get-users-params.dto'
+import { PatchUserDto } from './dtos/patch-user.dto'
 
 @Controller('users')
 export class UsersController {
@@ -25,6 +26,6 @@ export class UsersController {
 
   @Patch()
   public patchUser(
-    @Body body 
+    @Body() patchUserDto: PatchUserDto
   ) {}
 }
