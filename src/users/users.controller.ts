@@ -2,9 +2,14 @@ import { Controller, Get, Post, Query, Param, Body, ParseIntPipe, DefaultValuePi
 import { CreateUserDto } from './dtos/create-user.dto'
 import { GetUsersParamsDto } from './dtos/get-users-params.dto'
 import { PatchUserDto } from './dtos/patch-user.dto'
+import { UsersService } from './providers/users.service'
 
 @Controller('users')
 export class UsersController {
+
+  constructor(
+    private readonly usersService: UsersService,
+  ) { }
 
   @Get('/:id?')
   public getUsers(
