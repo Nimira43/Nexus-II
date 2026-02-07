@@ -5,7 +5,6 @@ import { PostsService } from './providers/posts.service'
 export class PostsController {
   constructor(
     private readonly postsService: PostsService,
-
   ) {}
   
   @Get('/:userId?')
