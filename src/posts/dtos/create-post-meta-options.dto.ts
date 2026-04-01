@@ -6,5 +6,5 @@ export class CreatePostMetaOptionsDto {
   key: string
 
   @IsNotEmpty()
-  value: string
+  value: any
 }

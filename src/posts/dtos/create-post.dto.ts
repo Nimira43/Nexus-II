@@ -40,7 +40,7 @@ export class CreatePostDto {
 
   @IsISO8601()
   @IsOptional()
-  publishedOn?: Date
+  publishOn?: Date
   
   @IsOptional()
   @IsArray()
