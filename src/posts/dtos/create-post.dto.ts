@@ -3,7 +3,7 @@ import { postStatus } from '../enums/postStatus.enum'
 import { postType } from '../enums/postType.enum'
 import { CreatePostMetaOptionsDto } from './create-post-meta-options.dto'
 import { Type } from 'class-transformer'
-import { ApiProperty } from '@nestjs/swagger'
+import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger'
 
 export class CreatePostDto {
   @ApiProperty({
@@ -42,19 +42,35 @@ export class CreatePostDto {
   @IsEnum(postStatus)
   @IsNotEmpty()
   status: postStatus
-  
+
+  @ApiPropertyOptional({
+    description: 'This is an example of the post.',
+    example: 'The post content.'
+  })
   @IsString()
   @IsOptional()
   content?: string
 
+  @ApiPropertyOptional({
+    description: 'Serialise your JSON object otherwise a validation error will be thrown.',
+    example: '{\r\n \"@context\": \"https\/\/schema.org\",\r\n \"@type\": \"Person\"\r\n }'
+  })
   @IsOptional()
   @IsJSON()
   schema?: string
 
+  @ApiPropertyOptional({
+    description: 'Featured image URL for your blog post.',
+    example: 'http://localhost.com/images/image1.jpg'
+  })
   @IsOptional()
   @IsUrl()
   featuredImageUrl?: string
 
+  @ApiPropertyOptional({
+    description: 'The date on which the blog post is published.',
+    example: '2024-03-16T07:46:32+0000'
+  })
   @IsISO8601()
   @IsOptional()
   publishOn?: Date
